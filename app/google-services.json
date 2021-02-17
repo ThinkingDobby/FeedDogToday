@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "659549109404",
+    "project_id": "feeddogtoday",
+    "storage_bucket": "feeddogtoday.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:659549109404:android:fb7160482b718f22e10159",
+        "android_client_info": {
+          "package_name": "com.thinkingdobby.feeddogtoday"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "659549109404-4kdmnjvj8sf1h3cvikuo6k09kfflj1ps.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7UifXjBvoEyF_LvuH42O0W97DJVPngf0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "659549109404-4kdmnjvj8sf1h3cvikuo6k09kfflj1ps.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
