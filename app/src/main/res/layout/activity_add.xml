@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/add_tv_petTypePrint"
+        android:id="@+id/add_et_petTypePrint"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -36,9 +36,9 @@
         android:layout_marginEnd="32dp"
         android:text="변경"
         android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="@+id/add_tv_petTypePrint"
+        app:layout_constraintBottom_toBottomOf="@+id/add_et_petTypePrint"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/add_tv_petTypePrint" />
+        app:layout_constraintTop_toTopOf="@+id/add_et_petTypePrint" />
 
     <TextView
         android:id="@+id/add_tv_petNameTitle"
@@ -49,7 +49,7 @@
         android:textSize="16sp"
         android:text="동물 이름"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/add_tv_petTypePrint" />
+        app:layout_constraintTop_toBottomOf="@id/add_et_petTypePrint" />
 
     <EditText
         android:id="@+id/add_et_petNameInput"
@@ -70,7 +70,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/add_btn_submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/add_et_petNameInput"
@@ -78,6 +78,7 @@
         app:cardCornerRadius="15dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/add_cv_setting"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -85,7 +86,7 @@
                 android:id="@+id/add_cv_tv_settingTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
+                android:textSize="20sp"
                 android:text="설정"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
@@ -98,16 +99,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:text="배식 주기"
+                android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="@+id/add_cv_tv_settingTitle"
                 app:layout_constraintTop_toBottomOf="@+id/add_cv_tv_settingTitle" />
 
             <EditText
+                android:id="@+id/add_cv_et_settingPeriod"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="8dp"
                 android:text="아침 점심 저녁"
-                android:textSize="13sp"
+                android:textSize="16sp"
                 android:enabled="false"
                 app:layout_constraintBottom_toBottomOf="@+id/add_cv_tv_settingPeriod"
                 app:layout_constraintEnd_toStartOf="@+id/add_cv_btn_settingPeriod"
@@ -131,6 +134,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:text="기본값 설정"
+                android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="@+id/add_cv_tv_settingTitle"
                 app:layout_constraintTop_toBottomOf="@+id/add_cv_tv_settingPeriod" />
 
@@ -154,5 +158,18 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/add_btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="등록하기"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

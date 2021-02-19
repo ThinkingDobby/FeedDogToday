@@ -5,5 +5,9 @@ class Pet {
 
     var petName = ""
 
-    var defaultValue = ""
+    var petType =""
+
+    var feedingPeriodType = ""
+
+    var defaultValue = false
 }
