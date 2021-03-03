@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import androidx.appcompat.app.AlertDialog
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ServerValue
 import kotlinx.android.synthetic.main.activity_add.*
 
 class AddActivity : AppCompatActivity() {
@@ -36,6 +37,7 @@ class AddActivity : AppCompatActivity() {
 
             val postPet = Pet()
             postPet.petId = ref.key!!
+            postPet.writeTime = ServerValue.TIMESTAMP
             postPet.petName = add_et_petNameInput.text.toString()
             postPet.petType = add_et_petTypePrint.text.toString()
             postPet.feedingPeriodType = add_cv_et_settingPeriod.text.toString()
