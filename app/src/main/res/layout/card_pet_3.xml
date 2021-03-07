@@ -64,6 +64,16 @@
             app:layout_constraintStart_toStartOf="@+id/list_cv_cb_lunch"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
+        <Button
+            android:id="@+id/list_cv_btn_submit"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="적용"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/list_cv_cb_dinner" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -12,4 +12,10 @@ class Pet {
     var feedingPeriodType = ""
 
     var defaultValue = false
+
+    var breakfastChecked = false
+
+    var lunchChecked = false
+
+    var dinnerChecked = false
 }

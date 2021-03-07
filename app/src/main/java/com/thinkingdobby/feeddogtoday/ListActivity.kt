@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -14,6 +16,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_list.*
+import kotlinx.android.synthetic.main.card_pet_3.*
 import kotlinx.android.synthetic.main.card_pet_3.view.*
 
 class ListActivity : AppCompatActivity() {
@@ -104,7 +107,10 @@ class ListActivity : AppCompatActivity() {
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val list_cv_tv_petName: TextView = itemView.list_cv_tv_petName
         val list_cv_tv_petType: TextView = itemView.list_cv_tv_petType
-        // 버튼 관련 어댑터 추가
+        val list_cv_cb_breakfast: CheckBox = itemView.list_cv_cb_breakfast
+        val list_cv_cb_lunch: CheckBox = itemView.list_cv_cb_lunch
+        val list_cv_cb_dinner: CheckBox = itemView.list_cv_cb_dinner
+        val list_cv_btn_submit: Button = itemView.list_cv_btn_submit
     }
 
     inner class MyAdapter : RecyclerView.Adapter<MyViewHolder>() {
@@ -126,6 +132,19 @@ class ListActivity : AppCompatActivity() {
             val pet = petList[position]
             holder.list_cv_tv_petName.text = pet.petName
             holder.list_cv_tv_petType.text = pet.petType
+            holder.list_cv_cb_breakfast.isChecked = pet.breakfastChecked
+            holder.list_cv_cb_lunch.isChecked = pet.lunchChecked
+            holder.list_cv_cb_dinner.isChecked = pet.dinnerChecked
+
+            val ref = FirebaseDatabase.getInstance().getReference("Pets").child(pet.petId)
+            val checkUpdates = mutableMapOf<String, Any>()
+
+            holder.list_cv_btn_submit.setOnClickListener {
+                checkUpdates.put("breakfastChecked", holder.list_cv_cb_breakfast.isChecked)
+                checkUpdates.put("lunchChecked", holder.list_cv_cb_lunch.isChecked)
+                checkUpdates.put("dinnerChecked", holder.list_cv_cb_dinner.isChecked)
+                ref.updateChildren(checkUpdates)
+            }
         }
     }
 }
