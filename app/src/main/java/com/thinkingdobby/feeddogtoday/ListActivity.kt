@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.ChildEventListener
@@ -105,6 +106,7 @@ class ListActivity : AppCompatActivity() {
     }
 
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val list_cv: ConstraintLayout = itemView.list_cv
         val list_cv_tv_petName: TextView = itemView.list_cv_tv_petName
         val list_cv_tv_petType: TextView = itemView.list_cv_tv_petType
         val list_cv_cb_breakfast: CheckBox = itemView.list_cv_cb_breakfast
@@ -144,6 +146,12 @@ class ListActivity : AppCompatActivity() {
                 checkUpdates.put("lunchChecked", holder.list_cv_cb_lunch.isChecked)
                 checkUpdates.put("dinnerChecked", holder.list_cv_cb_dinner.isChecked)
                 ref.updateChildren(checkUpdates)
+            }
+
+            holder.list_cv.setOnClickListener {
+                val intent = Intent(this@ListActivity, DetailActivity::class.java)
+                intent.putExtra("petId", petList[position].petId)
+                startActivity(intent)
             }
         }
     }

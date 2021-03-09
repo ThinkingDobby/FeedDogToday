@@ -46,5 +46,9 @@ class AddActivity : AppCompatActivity() {
             ref.setValue(postPet)
             finish()
         }
+
+        add_btn_cancel.setOnClickListener {
+            finish()
+        }
     }
 }
