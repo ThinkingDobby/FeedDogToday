@@ -148,7 +148,7 @@ class ListActivity : AppCompatActivity() {
             }
 
             holder.list_cv_btn_remove.setOnClickListener {
-
+                ref.removeValue()
             }
         }
     }
