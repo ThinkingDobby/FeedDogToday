@@ -22,6 +22,27 @@ class AddActivity : AppCompatActivity() {
             defaultValue = true
         }
 
+        // 동물 종 선택
+        val animalTypes = arrayOf("강아지", "고양이", "기타")
+        var animalType = "고양이"
+
+        add_btn_petTypeSelect.setOnClickListener {
+            val builder = AlertDialog.Builder(this@AddActivity)
+            builder.setTitle("동물 종류를 고르세요.")
+            builder.setSingleChoiceItems(animalTypes, -1) { _, which: Int ->
+                animalType = animalTypes[which]
+            }
+
+            builder.setPositiveButton("확인") { _, which ->
+                add_et_petTypePrint.text = animalType
+            }
+
+            builder.setNegativeButton("취소") {_, which -> }
+
+            builder.create().show()
+        }
+        // 동물 종 선택
+
         add_btn_submit.setOnClickListener {
             if (TextUtils.isEmpty(add_et_petNameInput.text)) {
                 AlertDialog.Builder(this@AddActivity)
@@ -40,7 +61,6 @@ class AddActivity : AppCompatActivity() {
             postPet.writeTime = ServerValue.TIMESTAMP
             postPet.petName = add_et_petNameInput.text.toString()
             postPet.petType = add_et_petTypePrint.text.toString()
-            postPet.feedingPeriodType = add_cv_et_settingPeriod.text.toString()
             postPet.defaultValue = defaultValue
 
             ref.setValue(postPet)

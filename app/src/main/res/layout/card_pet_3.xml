@@ -37,7 +37,7 @@
             android:id="@+id/list_cv_cb_breakfast"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:checked="true"
             android:text="아침"
@@ -45,24 +45,14 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <CheckBox
-            android:id="@+id/list_cv_cb_lunch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="점심"
-            app:layout_constraintBottom_toTopOf="@+id/list_cv_cb_dinner"
-            app:layout_constraintStart_toStartOf="@+id/list_cv_cb_breakfast"
-            app:layout_constraintTop_toBottomOf="@+id/list_cv_cb_breakfast" />
-
-        <CheckBox
             android:id="@+id/list_cv_cb_dinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:text="저녁"
+            android:layout_marginBottom="16dp"
             android:checked="true"
-            app:layout_constraintStart_toStartOf="@+id/list_cv_cb_lunch"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            android:text="저녁"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/list_cv_cb_breakfast" />
 
         <Button
             android:id="@+id/list_cv_btn_submit"

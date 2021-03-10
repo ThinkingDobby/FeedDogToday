@@ -108,7 +108,6 @@ class ListActivity : AppCompatActivity() {
         val list_cv_tv_petName: TextView = itemView.list_cv_tv_petName
         val list_cv_tv_petType: TextView = itemView.list_cv_tv_petType
         val list_cv_cb_breakfast: CheckBox = itemView.list_cv_cb_breakfast
-        val list_cv_cb_lunch: CheckBox = itemView.list_cv_cb_lunch
         val list_cv_cb_dinner: CheckBox = itemView.list_cv_cb_dinner
         val list_cv_btn_submit: Button = itemView.list_cv_btn_submit
         val list_cv_btn_remove: Button = itemView.list_cv_btn_remove
@@ -134,7 +133,6 @@ class ListActivity : AppCompatActivity() {
             holder.list_cv_tv_petName.text = pet.petName
             holder.list_cv_tv_petType.text = pet.petType
             holder.list_cv_cb_breakfast.isChecked = pet.breakfastChecked
-            holder.list_cv_cb_lunch.isChecked = pet.lunchChecked
             holder.list_cv_cb_dinner.isChecked = pet.dinnerChecked
 
             val ref = FirebaseDatabase.getInstance().getReference("Pets").child(pet.petId)
@@ -142,7 +140,6 @@ class ListActivity : AppCompatActivity() {
 
             holder.list_cv_btn_submit.setOnClickListener {
                 checkUpdates.put("breakfastChecked", holder.list_cv_cb_breakfast.isChecked)
-                checkUpdates.put("lunchChecked", holder.list_cv_cb_lunch.isChecked)
                 checkUpdates.put("dinnerChecked", holder.list_cv_cb_dinner.isChecked)
                 ref.updateChildren(checkUpdates)
             }
