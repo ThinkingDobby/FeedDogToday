@@ -111,6 +111,7 @@ class ListActivity : AppCompatActivity() {
         val list_cv_cb_lunch: CheckBox = itemView.list_cv_cb_lunch
         val list_cv_cb_dinner: CheckBox = itemView.list_cv_cb_dinner
         val list_cv_btn_submit: Button = itemView.list_cv_btn_submit
+        val list_cv_btn_remove: Button = itemView.list_cv_btn_remove
     }
 
     inner class MyAdapter : RecyclerView.Adapter<MyViewHolder>() {
@@ -144,6 +145,10 @@ class ListActivity : AppCompatActivity() {
                 checkUpdates.put("lunchChecked", holder.list_cv_cb_lunch.isChecked)
                 checkUpdates.put("dinnerChecked", holder.list_cv_cb_dinner.isChecked)
                 ref.updateChildren(checkUpdates)
+            }
+
+            holder.list_cv_btn_remove.setOnClickListener {
+
             }
         }
     }
