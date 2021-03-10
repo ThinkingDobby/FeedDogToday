@@ -36,6 +36,8 @@ class ListActivity : AppCompatActivity() {
         }
 
         val layoutManager = LinearLayoutManager(this@ListActivity)
+        layoutManager.reverseLayout = true
+        layoutManager.stackFromEnd = true
 
         list_rv_pets.layoutManager = layoutManager
         list_rv_pets.adapter = MyAdapter()
