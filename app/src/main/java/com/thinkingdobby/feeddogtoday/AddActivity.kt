@@ -10,17 +10,11 @@ import kotlinx.android.synthetic.main.activity_add.*
 
 class AddActivity : AppCompatActivity() {
 
-    private var defaultValue = false
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add)
 
         supportActionBar?.title = "동물 추가"
-
-        add_cv_swh_settingDefaultValue.setOnClickListener {
-            defaultValue = true
-        }
 
         // 동물 종 선택
         val animalTypes = arrayOf("강아지", "고양이", "기타")
@@ -61,7 +55,7 @@ class AddActivity : AppCompatActivity() {
             postPet.writeTime = ServerValue.TIMESTAMP
             postPet.petName = add_et_petNameInput.text.toString()
             postPet.petType = add_et_petTypePrint.text.toString()
-            postPet.defaultValue = defaultValue
+            postPet.defaultValue = add_cv_swh_settingDefaultValue.isChecked
 
             ref.setValue(postPet)
             finish()
