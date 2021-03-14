@@ -61,7 +61,6 @@ class ListActivity : AppCompatActivity() {
         Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show()
         // Notification AlarmManager
 
-
         // Init AlarmManager
         val initAlarmManager = getSystemService(ALARM_SERVICE) as AlarmManager
 
