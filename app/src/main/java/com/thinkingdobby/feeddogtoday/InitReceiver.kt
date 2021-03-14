@@ -9,14 +9,20 @@ import com.google.firebase.database.FirebaseDatabase
 class InitReceiver: BroadcastReceiver() {
 
     companion object {
+        const val TAG = "AlarmReceiver"
         const val NOTIFICATION_ID = 1
     }
 
     override fun onReceive(context: Context?, intent: Intent?) {
-        val checkUpdates = mutableMapOf<String, Any>()
-        checkUpdates.put("test", true)
+        Log.d(TAG, "Received intent : $intent")
 
-        FirebaseDatabase.getInstance().getReference("Pets").child("petId")
-            .updateChildren(checkUpdates)
+        val checkUpdates = mutableMapOf<String, Any>()
+        val status = false
+        checkUpdates.put("breakfastChecked", status)
+        checkUpdates.put("dinnerChecked", status)
+
+        val ref = FirebaseDatabase.getInstance().getReference("Pets").child("petId")
+
+        ref.updateChildren(checkUpdates)
     }
 }

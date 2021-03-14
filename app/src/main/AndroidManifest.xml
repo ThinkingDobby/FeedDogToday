@@ -14,6 +14,8 @@
         <!-- Manifest 에 Receiver 등록 -->
         <receiver android:name=".AlarmReceiver"
             android:exported="false"/>
+        <receiver android:name=".InitReceiver"
+            android:exported="false"/>
 
         <activity android:name=".AddActivity">
 

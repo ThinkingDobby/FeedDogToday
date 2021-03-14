@@ -5,7 +5,6 @@ import android.app.PendingIntent
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.SystemClock
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,7 +31,6 @@ class ListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_list)
 
         // AlarmManager
-
         val alarmManager = getSystemService(ALARM_SERVICE) as AlarmManager
         val notFedPetExist = true
 
@@ -61,7 +59,6 @@ class ListActivity : AppCompatActivity() {
             "Realtime periodic Alarm Off"
         }
         Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show()
-
         // AlarmManager
 
         // Init AlarmManager
