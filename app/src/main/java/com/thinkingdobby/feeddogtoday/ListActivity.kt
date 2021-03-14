@@ -5,7 +5,6 @@ import android.app.PendingIntent
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.SystemClock
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,8 +30,7 @@ class ListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list)
 
-        // AlarmManager
-
+        // Notification AlarmManager
         val alarmManager = getSystemService(ALARM_SERVICE) as AlarmManager
         val notFedPetExist = true
 
@@ -61,8 +59,31 @@ class ListActivity : AppCompatActivity() {
             "Realtime periodic Alarm Off"
         }
         Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show()
+        // Notification AlarmManager
 
-        // AlarmManager
+
+        // Init AlarmManager
+        val initAlarmManager = getSystemService(ALARM_SERVICE) as AlarmManager
+
+        val initIntent = Intent(this, InitReceiver::class.java)
+        val initPendingIntent = PendingIntent.getBroadcast(
+            this, InitReceiver.NOTIFICATION_ID, initIntent,
+            PendingIntent.FLAG_UPDATE_CURRENT
+        )
+
+        val initRepeatInterval: Long = 24 * 60 * 60 * 1000
+        val initCalendar: Calendar = Calendar.getInstance().apply {
+            timeInMillis = System.currentTimeMillis()
+            set(Calendar.HOUR_OF_DAY, 0)
+            set(Calendar.MINUTE, 0)
+        }
+
+        initAlarmManager.setRepeating(AlarmManager.RTC_WAKEUP,
+            initCalendar.timeInMillis,
+            initRepeatInterval,
+            initPendingIntent
+        )
+        // Init AlarmManager
 
 
         supportActionBar?.title = "애완동물 목록"
