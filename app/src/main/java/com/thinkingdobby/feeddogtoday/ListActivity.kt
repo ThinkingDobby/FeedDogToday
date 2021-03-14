@@ -64,6 +64,29 @@ class ListActivity : AppCompatActivity() {
 
         // AlarmManager
 
+        // Init AlarmManager
+        val initAlarmManager = getSystemService(ALARM_SERVICE) as AlarmManager
+
+        val initIntent = Intent(this, InitReceiver::class.java)
+        val initPendingIntent = PendingIntent.getBroadcast(
+            this, InitReceiver.NOTIFICATION_ID, initIntent,
+            PendingIntent.FLAG_UPDATE_CURRENT
+        )
+
+        val initRepeatInterval: Long = 24 * 60 * 60 * 1000
+        val initCalendar: Calendar = Calendar.getInstance().apply {
+            timeInMillis = System.currentTimeMillis()
+            set(Calendar.HOUR_OF_DAY, 0)
+            set(Calendar.MINUTE, 0)
+        }
+
+        initAlarmManager.setRepeating(AlarmManager.RTC_WAKEUP,
+            initCalendar.timeInMillis,
+            initRepeatInterval,
+            initPendingIntent
+        )
+        // Init AlarmManager
+
 
         supportActionBar?.title = "애완동물 목록"
 
