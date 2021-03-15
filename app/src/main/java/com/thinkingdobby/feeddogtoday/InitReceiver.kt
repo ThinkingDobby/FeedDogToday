@@ -16,13 +16,12 @@ class InitReceiver: BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
         Log.d(TAG, "Received intent : $intent")
 
-        val checkUpdates = mutableMapOf<String, Any>()
+        val checkInit = mutableMapOf<String, Any>()
         val status = false
-        checkUpdates.put("breakfastChecked", status)
-        checkUpdates.put("dinnerChecked", status)
+        checkInit.put("breakfastChecked", status)
+        checkInit.put("dinnerChecked", status)
 
-        val ref = FirebaseDatabase.getInstance().getReference("Pets").child("petId")
-
-        ref.updateChildren(checkUpdates)
+        val ref = FirebaseDatabase.getInstance().getReference("Pets").child("-MVnBkOIViRS8HhW-7Ob")
+        ref.updateChildren(checkInit)
     }
 }

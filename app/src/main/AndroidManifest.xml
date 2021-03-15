@@ -9,27 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-
+        <activity android:name=".SettingActivity"></activity>
         <!-- Manifest 에 Receiver 등록 -->
-        <receiver android:name=".AlarmReceiver"
-            android:exported="false"/>
-        <receiver android:name=".InitReceiver"
-            android:exported="false"/>
+        <receiver
+            android:name=".AlarmReceiver"
+            android:exported="false" />
+        <receiver
+            android:name=".InitReceiver"
+            android:exported="false" />
 
-        <activity android:name=".AddActivity">
-
-        </activity>
-        <activity android:name=".ListActivity" >
+        <activity android:name=".AddActivity"></activity>
+        <activity android:name=".ListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

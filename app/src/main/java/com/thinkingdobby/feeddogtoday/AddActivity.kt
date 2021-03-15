@@ -18,10 +18,6 @@ class AddActivity : AppCompatActivity() {
 
         supportActionBar?.title = "동물 추가"
 
-        add_cv_swh_settingDefaultValue.setOnClickListener {
-            defaultValue = true
-        }
-
         // 동물 종 선택
         val animalTypes = arrayOf("강아지", "고양이", "기타")
         var animalType = "고양이"
@@ -61,7 +57,6 @@ class AddActivity : AppCompatActivity() {
             postPet.writeTime = ServerValue.TIMESTAMP
             postPet.petName = add_et_petNameInput.text.toString()
             postPet.petType = add_et_petTypePrint.text.toString()
-            postPet.defaultValue = defaultValue
 
             ref.setValue(postPet)
             finish()

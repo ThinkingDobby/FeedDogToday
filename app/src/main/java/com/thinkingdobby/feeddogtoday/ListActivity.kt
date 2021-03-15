@@ -42,7 +42,7 @@ class ListActivity : AppCompatActivity() {
 
         val toastMessage: String
         toastMessage = if (notFedPetExist) {
-            val repeatInterval: Long = 12 * 60 * 60 * 1000
+            val repeatInterval: Long = AlarmManager.INTERVAL_HALF_DAY
             val calendar: Calendar = Calendar.getInstance().apply {
                 timeInMillis = System.currentTimeMillis()
                 set(Calendar.HOUR_OF_DAY, 19)
@@ -70,7 +70,7 @@ class ListActivity : AppCompatActivity() {
             PendingIntent.FLAG_UPDATE_CURRENT
         )
 
-        val initRepeatInterval: Long = 24 * 60 * 60 * 1000
+        val initRepeatInterval: Long = AlarmManager.INTERVAL_DAY
         val initCalendar: Calendar = Calendar.getInstance().apply {
             timeInMillis = System.currentTimeMillis()
             set(Calendar.HOUR_OF_DAY, 0)
@@ -87,10 +87,18 @@ class ListActivity : AppCompatActivity() {
 
         supportActionBar?.title = "애완동물 목록"
 
+
+        // Floating Action Buttons
         list_fabtn_add.setOnClickListener {
             val intent = Intent(this@ListActivity, AddActivity::class.java)
             startActivity(intent)
         }
+
+        list_fabtn_set.setOnClickListener {
+            val intent = Intent(this@ListActivity, SettingActivity::class.java)
+            startActivity(intent)
+        }
+        // Floating Action Buttons
 
         val layoutManager = LinearLayoutManager(this@ListActivity)
 
