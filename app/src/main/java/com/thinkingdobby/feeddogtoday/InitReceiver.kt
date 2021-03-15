@@ -4,7 +4,10 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.util.Log
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class InitReceiver: BroadcastReceiver() {
 
@@ -21,7 +24,17 @@ class InitReceiver: BroadcastReceiver() {
         checkInit.put("breakfastChecked", status)
         checkInit.put("dinnerChecked", status)
 
-        val ref = FirebaseDatabase.getInstance().getReference("Pets").child("-MVnBkOIViRS8HhW-7Ob")
-        ref.updateChildren(checkInit)
+        FirebaseDatabase.getInstance().getReference("Pets")
+            .addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    for (postSnapShot in snapshot.children) {
+                        FirebaseDatabase.getInstance().getReference("Pets")
+                            .child(postSnapShot.key.toString()).updateChildren(checkInit)
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                }
+            })
     }
 }
