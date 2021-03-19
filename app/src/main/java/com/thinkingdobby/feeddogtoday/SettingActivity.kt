@@ -15,6 +15,12 @@ class SettingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_setting)
 
+        // toolBar
+        val toolBar: androidx.appcompat.widget.Toolbar? = set_tb
+        setSupportActionBar(toolBar)
+        supportActionBar!!.setDisplayShowTitleEnabled(false)
+        // toolBar
+
         // Notification AlarmManager
         set_cv_swh_settingNotificationReceiving.setOnClickListener {
             val alarmManager = getSystemService(ALARM_SERVICE) as AlarmManager

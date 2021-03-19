@@ -3,12 +3,12 @@ package com.thinkingdobby.feeddogtoday
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.TextView
+import android.widget.Toolbar
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.ChildEventListener
@@ -21,24 +21,43 @@ class ListActivity : AppCompatActivity() {
 
     val petList = mutableListOf<Pet>()
 
+    // toolBar
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val menuInflater = menuInflater
+        menuInflater.inflate(R.menu.menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.menu_add -> {
+                val intent = Intent(this, AddActivity::class.java)
+                startActivity(intent)
+                return true
+            }
+
+            R.id.menu_setting -> {
+                val intent = Intent(this, SettingActivity::class.java)
+                startActivity(intent)
+                return true
+            }
+
+            else -> {
+                return super.onOptionsItemSelected(item)
+            }
+        }
+    }
+    // toolBar
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list)
 
-        supportActionBar?.title = "애완동물 목록"
-
-
-        // Floating Action Buttons
-        list_fabtn_add.setOnClickListener {
-            val intent = Intent(this@ListActivity, AddActivity::class.java)
-            startActivity(intent)
-        }
-
-        list_fabtn_set.setOnClickListener {
-            val intent = Intent(this@ListActivity, SettingActivity::class.java)
-            startActivity(intent)
-        }
-        // Floating Action Buttons
+        // toolBar
+        val toolBar: androidx.appcompat.widget.Toolbar? = list_tb
+        setSupportActionBar(toolBar)
+        supportActionBar!!.setDisplayShowTitleEnabled(false)
+        // toolBar
 
         val layoutManager = LinearLayoutManager(this@ListActivity)
 
@@ -151,7 +170,17 @@ class ListActivity : AppCompatActivity() {
             }
 
             holder.list_cv_btn_remove.setOnClickListener {
-                ref.removeValue()
+                val builder = AlertDialog.Builder(this@ListActivity)
+                builder.setTitle("동물 정보를 삭제할까요?")
+
+                builder.setPositiveButton("아니오") { _, which ->
+                }
+
+                builder.setNegativeButton("예") {_, which ->
+                    ref.removeValue()
+                }
+
+                builder.create().show()
             }
         }
     }

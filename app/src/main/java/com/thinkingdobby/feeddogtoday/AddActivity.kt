@@ -16,7 +16,11 @@ class AddActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add)
 
-        supportActionBar?.title = "동물 추가"
+        // toolBar
+        val toolBar: androidx.appcompat.widget.Toolbar? = add_tb
+        setSupportActionBar(toolBar)
+        supportActionBar!!.setDisplayShowTitleEnabled(false)
+        // toolBar
 
         // 동물 종 선택
         val animalTypes = arrayOf("강아지", "고양이", "기타")
