@@ -19,7 +19,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="동물 추가"
-            android:textSize="20sp"
+            android:fontFamily="@font/mainfont"
+            android:textSize="22sp"
             android:textColor="@android:color/white"/>
 
     </androidx.appcompat.widget.Toolbar>
@@ -51,10 +52,11 @@
     <Button
         android:id="@+id/add_btn_petTypeSelect"
         android:layout_width="50dp"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_marginEnd="32dp"
         android:text="변경"
         android:textSize="13sp"
+        android:background="@drawable/button_color_drawable"
         app:layout_constraintBottom_toBottomOf="@+id/add_et_petTypePrint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/add_et_petTypePrint" />
@@ -77,44 +79,11 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:text="별이"
-        android:textSize="24sp"
+        android:fontFamily="@font/subfont"
+        android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/add_tv_petNameTitle"
         app:layout_constraintTop_toBottomOf="@+id/add_tv_petNameTitle" />
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@id/add_btn_submit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/add_et_petNameInput"
-        app:cardUseCompatPadding="true"
-        app:cardCornerRadius="15dp">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/add_cv_setting"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/add_cv_tv_settingTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="설정"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/add_btn_submit"
@@ -125,6 +94,7 @@
         android:layout_marginBottom="16dp"
         android:text="등록하기"
         android:textSize="20sp"
+        android:background="@drawable/button_color_drawable"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

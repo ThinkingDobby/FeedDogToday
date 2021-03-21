@@ -21,7 +21,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="환경설정"
-            android:textSize="20sp"
+            android:fontFamily="@font/mainfont"
+            android:textSize="22sp"
             android:textColor="@android:color/white"/>
 
     </androidx.appcompat.widget.Toolbar>
@@ -62,6 +63,8 @@
                 android:layout_width="50dp"
                 android:layout_height="30dp"
                 android:layout_marginEnd="8dp"
+                android:text="시작"
+                android:background="@drawable/button_color_drawable"
                 app:layout_constraintBottom_toBottomOf="@+id/set_cv_tv_settingDefaultValue"
                 app:layout_constraintEnd_toStartOf="@+id/set_cv_btn_settingDefaultValue"
                 app:layout_constraintTop_toTopOf="@+id/set_cv_tv_settingDefaultValue" />
@@ -71,6 +74,11 @@
                 android:layout_width="20dp"
                 android:layout_height="30dp"
                 android:layout_marginEnd="16dp"
+                android:background="@drawable/button_color_drawable"
+                android:text="!"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorTextAccent"
                 app:layout_constraintBottom_toBottomOf="@+id/set_cv_swh_settingDefaultValue"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/set_cv_swh_settingDefaultValue" />
@@ -90,6 +98,8 @@
                 android:layout_width="50dp"
                 android:layout_height="30dp"
                 android:layout_marginEnd="8dp"
+                android:text="시작"
+                android:background="@drawable/button_color_drawable"
                 app:layout_constraintBottom_toBottomOf="@+id/set_cv_tv_settingNotificationReceiving"
                 app:layout_constraintEnd_toStartOf="@+id/set_cv_btn_settingDefaultValue"
                 app:layout_constraintTop_toTopOf="@+id/set_cv_tv_settingNotificationReceiving" />
@@ -99,6 +109,11 @@
                 android:layout_width="20dp"
                 android:layout_height="30dp"
                 android:layout_marginEnd="16dp"
+                android:background="@drawable/button_color_drawable"
+                android:text="!"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorTextAccent"
                 app:layout_constraintBottom_toBottomOf="@+id/set_cv_tv_settingNotificationReceiving"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/set_cv_tv_settingNotificationReceiving" />
@@ -114,6 +129,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:text="뒤로가기"
+        android:background="@drawable/button_color_drawable"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

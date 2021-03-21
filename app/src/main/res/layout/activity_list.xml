@@ -20,7 +20,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="애완동물 목록"
-            android:textSize="20sp"
+            android:fontFamily="@font/mainfont"
+            android:textSize="22sp"
             android:textColor="@android:color/white"/>
 
     </androidx.appcompat.widget.Toolbar>
