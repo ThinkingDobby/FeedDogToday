@@ -6,4 +6,5 @@
     <color name="colorButtonBefore">#efebea</color>
     <color name="colorButtonAfter">#bdb9b8</color>
     <color name="colorTextAccent">#725b53</color>
+    <color name="cardBackground">#99ffffff</color>
 </resources>

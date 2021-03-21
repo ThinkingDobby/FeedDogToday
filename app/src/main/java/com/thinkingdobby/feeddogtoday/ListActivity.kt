@@ -1,6 +1,8 @@
 package com.thinkingdobby.feeddogtoday
 
 import android.content.Intent
+import android.graphics.Color
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.*
@@ -8,6 +10,7 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.TextView
 import android.widget.Toolbar
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -154,6 +157,9 @@ class ListActivity : AppCompatActivity() {
         }
 
         override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+
+            holder.itemView.setBackgroundColor(Color.parseColor("#99ffffff"));
+
             val pet = petList[position]
             holder.list_cv_tv_petName.text = pet.petName
             holder.list_cv_tv_petType.text = pet.petType

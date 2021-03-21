@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".ListActivity">
 
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="300dp"
+        android:src="@drawable/list_background_cat"
+        app:layout_constraintBottom_toBottomOf="@+id/list_rv_pets"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/list_tb"
         android:layout_width="match_parent"
