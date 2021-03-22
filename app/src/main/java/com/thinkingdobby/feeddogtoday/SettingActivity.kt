@@ -59,7 +59,7 @@ class SettingActivity : AppCompatActivity() {
         set_cv_btn_settingNotificationReceiving.setOnClickListener {
             val builder = AlertDialog.Builder(this@SettingActivity)
             builder.setTitle("알림 설정")
-            builder.setMessage("\n'시작' 버튼을 누르면 매일 07와 19시에 알림이 전송됩니다.\n" +
+            builder.setMessage("\n'시작' 버튼을 누르면 매일 오전, 오후 7시에 알림이 전송됩니다.\n" +
                     "\n알림 해제는 디바이스 환경설정에서 가능합니다.")
 
             builder.setPositiveButton("확인") { _, which ->
