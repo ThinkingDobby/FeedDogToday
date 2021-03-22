@@ -6,6 +6,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_setting.*
 import java.util.*
 
@@ -54,6 +55,18 @@ class SettingActivity : AppCompatActivity() {
             }
             Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show()
         }
+
+        set_cv_btn_settingNotificationReceiving.setOnClickListener {
+            val builder = AlertDialog.Builder(this@SettingActivity)
+            builder.setTitle("알림 설정")
+            builder.setMessage("'시작' 버튼을 누르면 매일 07와 19시에 알림이 전송됩니다.\n" +
+                    "알림 해제는 디바이스 환경설정에서 가능합니다.")
+
+            builder.setPositiveButton("확인") { _, which ->
+            }
+
+            builder.create().show()
+        }
         // Notification AlarmManager
 
         // Init AlarmManager - FOR_DEV
@@ -79,6 +92,16 @@ class SettingActivity : AppCompatActivity() {
                 initRepeatInterval,
                 initPendingIntent
             )
+        }
+
+        set_cv_btn_settingDefaultValue.setOnClickListener {
+            val builder = AlertDialog.Builder(this@SettingActivity)
+            builder.setTitle("개발자용 초기화 옵션입니다.")
+
+            builder.setPositiveButton("확인") { _, which ->
+            }
+
+            builder.create().show()
         }
         // Init AlarmManager - FOR_DEV
 
