@@ -36,12 +36,14 @@ class ListActivity : AppCompatActivity() {
             R.id.menu_add -> {
                 val intent = Intent(this, AddActivity::class.java)
                 startActivity(intent)
+                overridePendingTransition(R.anim.fadein, R.anim.fadeout)
                 return true
             }
 
             R.id.menu_setting -> {
                 val intent = Intent(this, SettingActivity::class.java)
                 startActivity(intent)
+                overridePendingTransition(R.anim.fadein, R.anim.fadeout)
                 return true
             }
 
@@ -189,5 +191,10 @@ class ListActivity : AppCompatActivity() {
                 builder.create().show()
             }
         }
+    }
+
+    override fun finish() {
+        super.finish()
+        overridePendingTransition(R.anim.fadein, R.anim.fadeout)
     }
 }

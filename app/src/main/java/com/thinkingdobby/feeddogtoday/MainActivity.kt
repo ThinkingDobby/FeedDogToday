@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         main_iv_bowl.setOnClickListener {
             val intent = Intent(this, ListActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.fadein, R.anim.fadeout)
         }
     }
 }
