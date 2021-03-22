@@ -158,7 +158,7 @@ class ListActivity : AppCompatActivity() {
 
         override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
-            holder.itemView.setBackgroundColor(Color.parseColor("#99ffffff"));
+            holder.itemView.setBackgroundColor(Color.parseColor("#B3ffffff"));
 
             val pet = petList[position]
             holder.list_cv_tv_petName.text = pet.petName
