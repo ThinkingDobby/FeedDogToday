@@ -62,9 +62,9 @@
                 android:id="@+id/set_cv_swh_settingDefaultValue"
                 android:layout_width="50dp"
                 android:layout_height="30dp"
-                android:layout_marginEnd="8dp"
-                android:text="시작"
+                android:layout_marginEnd="12dp"
                 android:background="@drawable/button_color_drawable"
+                android:text="시작"
                 app:layout_constraintBottom_toBottomOf="@+id/set_cv_tv_settingDefaultValue"
                 app:layout_constraintEnd_toStartOf="@+id/set_cv_btn_settingDefaultValue"
                 app:layout_constraintTop_toTopOf="@+id/set_cv_tv_settingDefaultValue" />
@@ -97,9 +97,9 @@
                 android:id="@+id/set_cv_swh_settingNotificationReceiving"
                 android:layout_width="50dp"
                 android:layout_height="30dp"
-                android:layout_marginEnd="8dp"
-                android:text="시작"
+                android:layout_marginEnd="12dp"
                 android:background="@drawable/button_color_drawable"
+                android:text="시작"
                 app:layout_constraintBottom_toBottomOf="@+id/set_cv_tv_settingNotificationReceiving"
                 app:layout_constraintEnd_toStartOf="@+id/set_cv_btn_settingDefaultValue"
                 app:layout_constraintTop_toTopOf="@+id/set_cv_tv_settingNotificationReceiving" />
