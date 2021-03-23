@@ -24,12 +24,17 @@ class InitReceiver: BroadcastReceiver() {
         checkInit.put("breakfastChecked", status)
         checkInit.put("dinnerChecked", status)
 
+        var initDone = false
+
         FirebaseDatabase.getInstance().getReference("Pets")
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    for (postSnapShot in snapshot.children) {
-                        FirebaseDatabase.getInstance().getReference("Pets")
-                            .child(postSnapShot.key.toString()).updateChildren(checkInit)
+                    if (!initDone) {
+                        for (postSnapShot in snapshot.children) {
+                            FirebaseDatabase.getInstance().getReference("Pets")
+                                .child(postSnapShot.key.toString()).updateChildren(checkInit)
+                        }
+                        initDone = true
                     }
                 }
 
