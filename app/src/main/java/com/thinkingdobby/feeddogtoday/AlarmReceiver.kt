@@ -41,7 +41,7 @@ class AlarmReceiver : BroadcastReceiver() {
         )
         val builder =
             NotificationCompat.Builder(context, PRIMARY_CHANNEL_ID)
-                .setSmallIcon(R.drawable.icon)
+                .setSmallIcon(R.drawable.ic_stat_name)
                 .setContentTitle("별이 밥 줬어?")
                 .setContentText("기록해 주세요!")
                 .setContentIntent(contentPendingIntent)

@@ -48,7 +48,7 @@ class SettingActivity : AppCompatActivity() {
                     repeatInterval,
                     pendingIntent
                 )
-                "Realtime periodic Alarm On"
+                "알림이 설정되었습니다."
             } else {
                 alarmManager.cancel(pendingIntent)
                 "Realtime periodic Alarm Off"
