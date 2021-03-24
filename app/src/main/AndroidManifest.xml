@@ -17,6 +17,9 @@
             android:name=".BreakfastAlarmReceiver"
             android:exported="false" />
         <receiver
+            android:name=".DinnerAlarmReceiver"
+            android:exported="false"/>
+        <receiver
             android:name=".InitReceiver"
             android:exported="false" />
 
