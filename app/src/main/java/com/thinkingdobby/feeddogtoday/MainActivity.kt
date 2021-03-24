@@ -15,7 +15,8 @@ class MainActivity : AppCompatActivity() {
 
         // cancel Alarm
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        notificationManager.cancel(0)
+        notificationManager.cancel(0)   // breakfast
+        notificationManager.cancel(2)   // dinner
         // cancel Alarm
 
         main_iv_bowl.setOnClickListener {

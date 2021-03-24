@@ -14,7 +14,7 @@
 
         <!-- Manifest 에 Receiver 등록 -->
         <receiver
-            android:name=".AlarmReceiver"
+            android:name=".BreakfastAlarmReceiver"
             android:exported="false" />
         <receiver
             android:name=".InitReceiver"

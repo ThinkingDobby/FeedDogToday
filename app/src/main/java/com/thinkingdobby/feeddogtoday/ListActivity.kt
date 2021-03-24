@@ -1,16 +1,15 @@
 package com.thinkingdobby.feeddogtoday
 
+import android.app.NotificationManager
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.*
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.TextView
-import android.widget.Toolbar
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -63,6 +62,12 @@ class ListActivity : AppCompatActivity() {
         setSupportActionBar(toolBar)
         supportActionBar!!.setDisplayShowTitleEnabled(false)
         // toolBar
+
+        // cancel Alarm
+        val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        notificationManager.cancel(0)   // breakfast
+        notificationManager.cancel(2)   // dinner
+        // cancel Alarm
 
         val layoutManager = LinearLayoutManager(this@ListActivity)
 
