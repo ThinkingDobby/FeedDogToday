@@ -19,9 +19,6 @@
         <receiver
             android:name=".DinnerAlarmReceiver"
             android:exported="false"/>
-        <receiver
-            android:name=".InitReceiver"
-            android:exported="false" />
 
         <activity android:name=".SettingActivity"/>
         <activity android:name=".AddActivity"/>

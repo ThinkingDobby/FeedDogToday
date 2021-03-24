@@ -87,42 +87,6 @@ class SettingActivity : AppCompatActivity() {
         }
         // Notification AlarmManager
 
-        // Init AlarmManager - FOR_DEV
-        set_cv_swh_settingDefaultValue.setOnClickListener {
-            val initAlarmManager = getSystemService(ALARM_SERVICE) as AlarmManager
-
-            val initIntent = Intent(this, InitReceiver::class.java)
-            val initPendingIntent = PendingIntent.getBroadcast(
-                this, InitReceiver.NOTIFICATION_ID, initIntent,
-                PendingIntent.FLAG_UPDATE_CURRENT
-            )
-
-            val initRepeatInterval: Long = AlarmManager.INTERVAL_DAY
-            val initCalendar: Calendar = Calendar.getInstance().apply {
-                timeInMillis = System.currentTimeMillis()
-                set(Calendar.HOUR_OF_DAY, 0)
-                set(Calendar.MINUTE, 0)
-            }
-
-            initAlarmManager.setRepeating(
-                AlarmManager.RTC_WAKEUP,
-                initCalendar.timeInMillis,
-                initRepeatInterval,
-                initPendingIntent
-            )
-        }
-
-        set_cv_btn_settingDefaultValue.setOnClickListener {
-            val builder = AlertDialog.Builder(this@SettingActivity)
-            builder.setTitle("개발자용 초기화 옵션입니다.")
-
-            builder.setPositiveButton("확인") { _, which ->
-            }
-
-            builder.create().show()
-        }
-        // Init AlarmManager - FOR_DEV
-
         set_btn_back.setOnClickListener {
             finish()
         }
