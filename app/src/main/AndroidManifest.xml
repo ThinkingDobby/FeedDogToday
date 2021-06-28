@@ -3,6 +3,7 @@
     package="com.thinkingdobby.feeddogtoday">
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
     <application
         android:allowBackup="true"
@@ -22,6 +23,13 @@
         <receiver
             android:name=".InitReceiver"
             android:exported="false" />
+        <receiver
+            android:name=".BootReceiver"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
 
         <activity android:name=".SettingActivity"/>
         <activity android:name=".AddActivity"/>

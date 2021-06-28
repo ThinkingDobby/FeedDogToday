@@ -2,7 +2,9 @@ package com.thinkingdobby.feeddogtoday
 
 import android.app.AlarmManager
 import android.app.PendingIntent
+import android.content.ComponentName
 import android.content.Intent
+import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -109,6 +111,13 @@ class SettingActivity : AppCompatActivity() {
                 initCalendar.timeInMillis,
                 initRepeatInterval,
                 initPendingIntent
+            )
+
+            val bootReceiver = ComponentName(this, BootReceiver::class.java)
+            packageManager.setComponentEnabledSetting(
+                bootReceiver,
+                PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
+                PackageManager.DONT_KILL_APP
             )
         }
 
