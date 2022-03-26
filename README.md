@@ -8,7 +8,7 @@ ___
 1. Firebase RealtimeDatabase 활용
 2. AlarmManager, 리시버 이용한 스케줄링
 ___
-<div overflow-x="scroll">
+<div>
   <img src="https://user-images.githubusercontent.com/75599138/160237688-b507c4db-7fbf-479f-a46e-da42de46f6b8.jpg" width="180"  height="400"/>
   <img src="https://user-images.githubusercontent.com/75599138/160237687-6d27688c-499e-4368-a7e5-05147a891a76.jpg" width="180"  height="400"/>
   <img src="https://user-images.githubusercontent.com/75599138/160237686-da004c39-7511-4cef-8e06-68feb9ff432d.jpg" width="180"  height="400"/>
